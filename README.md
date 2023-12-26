@@ -1,66 +1,16 @@
-## Foundry
+## yieldVaults
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+An ERC4626 implementation of a vault that accepts DAI as assets and generates yield via AAVE yield pool.
 
-Foundry consists of:
+1.  DAI : 0xFF34B3d4Aee8ddCd6F9AFFFB6Fe49bD371b8a357
+2.  AAVE pool provider : 0x012bAC54348C0E635dCAc9D5FB99f06F24136C9A
+3.  deployed yieldvault : 0x6cf050C2aFC6ed386d805629Ef815A9839292277
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+**Note** : each user has to deploy his own vault with, as given below.
 
-## Documentation
+### compile
+``forge build``
 
-https://book.getfoundry.sh/
+### deploy
+``forge script script/deploy.s.sol:deployScript --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv``
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
