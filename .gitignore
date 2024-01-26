@@ -1,15 +1,10 @@
 # Compiler files
 cache/
 out/
-broadcast/depoly.s.sol/11155111/
 
 # Docs
 docs/
-
-#frontend
-index.html
-app.js
-styles.css
+info.md
 
 # Dotenv file
 .env
