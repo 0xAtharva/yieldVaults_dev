@@ -7,7 +7,6 @@
     <title>user interface for yield vault</title>
     <link href="./styles.css" rel="stylesheet">
     <script defer src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
-    <script defer src="./index.js"></script>
 </head>
 <body>
     <div class="middle">
@@ -38,12 +37,12 @@
             <h2>Write</h2>
             <button onclick="deposit()">deposit</button>
             <input type="text" placeholder="uint256 assets" id="d_assets"/>
-            <input type="text" placeholder="address receiver: gets newly minted shares" style="width: 300px" id="d_receiver"/>
+            <input type="text" placeholder="receiver: gets vault shares" style="width: 300px" id="d_receiver"/>
             <span id="d_nonce"></span><br><br>
 
             <button onclick="withdraw()">withdraw</button>
             <input type="text" placeholder="uint256 assets" id="w_assets"/>
-            <input type="text" placeholder="address receiver: gets newly minted shares" style="width: 300px" id="w_receiver"/>
+            <input type="text" placeholder="receiver: assets returned here" style="width: 300px" id="w_receiver"/>
             <input type="text" placeholder="address owner" id="w_owner"/>
             <span id="w_nonce"></span><br><br>
 
@@ -52,9 +51,9 @@
             <span id="supplyNonce"></span><br><br>
             
             <button onclick="withdrawFromAaveV3()">withdrawFromAaveV3</button>
-            <span id="widrawNonce"></span>
+            <span id="withdrawNonce"></span>
         </div>
     </div>
-    
+    <script defer src="./index.js"></script>
 </body>
 </html>

@@ -39,7 +39,7 @@ async function getTotalAssets(){
 }
 
 
-
+// encountering error here when doing both approve and deposit, need to think of a way doing in a single tx.
 async function deposit() {
     const amt = document.getElementById('d_assets').value;
     const receiver = document.getElementById('d_receiver').value;
@@ -62,11 +62,6 @@ async function supplyToAaveV3() {
 }
 
 async function withdrawFromAaveV3() {
-    try {
-        await Vault.connect(signer).withdrawFromAaveV3();
-        document.getElementById('withdrawNonce').innerHTML = ++nonce;
-    }catch(error) {
-        console.log(`error occured: ${error}`);
-    }
-    
+    await Vault.connect(signer).withdrawFromAaveV3();
+    document.getElementById('withdrawNonce').innerHTML = `nonce: ${++nonce}`;
 }
